@@ -18,12 +18,11 @@ input CreateUserArgs {
    password: String!
  }
 type Response {
-  code: Int!
   success: Boolean!
   message: String!
 }
 type Mutation {
-   register(inputArgs: CreateUserArgs): [Response!]!
+   register(inputArgs: CreateUserArgs): Response!
 }
 type Query {
 getBooks:[Book]
