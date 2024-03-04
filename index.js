@@ -11,7 +11,7 @@ connection();
 async function startApolloServer() {
   const typeDefs = mergeTypeDefs([authorSchema]);
   const resolvers = mergeResolvers([authorResolver]);
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({ typeDefs, resolvers, introspection: true });
   const { url } = await startStandaloneServer(server, {
     listen: { port: process.env.PORT || 5000 },
   });
