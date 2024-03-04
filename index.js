@@ -13,7 +13,7 @@ async function startApolloServer() {
   const resolvers = mergeResolvers([authorResolver]);
   const server = new ApolloServer({ typeDefs, resolvers });
   const { url } = await startStandaloneServer(server, {
-    listen: { port: 5000 },
+    listen: { port: process.env.PORT || 5000 },
   });
   console.log(`🚀  Server ready at: ${url}`);
 }
