@@ -36,6 +36,7 @@ const authorResolver = {
         //   });
         // }
       } else {
+        console.log("error");
         throw new GraphQLError(JSON.stringify(response.errors), {
           extensions: {
             code: "BAD_USER_INPUT",
